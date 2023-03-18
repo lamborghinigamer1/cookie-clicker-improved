@@ -1,0 +1,66 @@
+body {
+    color: white;
+    background-color: #312f2f;
+    margin: 0;
+    border: 0;
+}
+
+.inputlayout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.inputboxes {
+    width: 60%;
+    max-width: 600px;
+    background-color: #464545;
+    color: white;
+    padding: 2em;
+    border: 0;
+    outline: none;
+    font-size: 1em;
+}
+
+.inputboxes:focus {
+    background-color: #3f434e;
+}
+
+.title {
+    text-align: center;
+    font-size: 2em;
+}
+
+.cookie {
+    width: 10%;
+    max-width: 400px;
+}
+
+.cookiebutton{
+    background-color: unset;
+    border: 0;
+    padding: 0;
+}
+
+.datapos{
+    display: flex;
+    flex-direction: column;
+}
+
+.highscores{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabledata{
+    padding: 20px;
+    font-size: 1.4vw;
+}
+
+.tableh{
+    font-size: 1.4vw;
+}
