@@ -54,6 +54,7 @@ if (!isset($_SESSION['username'])) {
         ?>
     </form>
     <p></p>
+    <h1 class="title">Highscores</h1>
     <table class="highscores">
         <tr>
             <th class="tableh">Position</th>

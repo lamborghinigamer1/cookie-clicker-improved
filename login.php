@@ -49,6 +49,29 @@ if (isset($_SESSION['username'])) {
 
         ?>
     </form>
+    <p></p>
+    <h1 class="title">Highscores</h1>
+    <table class="highscores">
+        <tr>
+            <th class="tableh">Position</th>
+            <th class="tableh">Player</th>
+            <th class="tableh">Score</th>
+        </tr>
+        <?php
+
+        $querytopscore = "SELECT * FROM users WHERE score IS NOT NULL ORDER BY score DESC LIMIT 10";
+        $stmttopscore = $pdo->prepare($querytopscore);
+        $stmttopscore->execute();
+        $resulttopscore = $stmttopscore->fetchAll(PDO::FETCH_ASSOC);
+        $pos = 1;
+        for ($i = 0; $i < count($resulttopscore); $i++) {
+            echo "<tr><td class='tabledata'>$pos</td>" . PHP_EOL;
+            echo "<td class='tabledata'>{$resulttopscore[$i]['username']}</td>" . PHP_EOL;
+            echo "<td class='tabledata'>{$resulttopscore[$i]['score']}</td></tr>" . PHP_EOL;
+            $pos++;
+        }
+        ?>
+    </table>
 
 </body>
 
