@@ -13,6 +13,7 @@ if (isset($_SESSION['username'])) {
 <html lang="en">
 
 <head>
+    <link rel="icon" href="images/cookie.png">
     <link rel="stylesheet" href="../style/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,33 +31,33 @@ if (isset($_SESSION['username'])) {
         <button class="inputboxes" type="submit">Sign up</button>
         <?php
 
-    if (isset($_POST['username']) && isset($_POST['password'])) {
-        $check = "SELECT * FROM users WHERE username = :username";
-        $stmt = $pdo->prepare($check);
-        $stmt->execute([
-            'username' => $_POST['username']
-        ]);
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($result) {
-            echo "<h1 class='title'>Username already exists</h1>" . PHP_EOL;
+        if (isset($_POST['username']) && isset($_POST['password'])) {
+            $check = "SELECT * FROM users WHERE username = :username";
+            $stmt = $pdo->prepare($check);
+            $stmt->execute([
+                'username' => $_POST['username']
+            ]);
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($result) {
+                echo "<h1 class='title'>Username already exists</h1>" . PHP_EOL;
+                exit();
+            }
+            $password = trim($_POST['password']);
+            if (strlen($password) < 6) {
+                echo "<h1 class='title'>Your password must atleast be 6 characters long</h1>" . PHP_EOL;
+            }
+            $hashedpassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $querysignup = "INSERT INTO users (username, password) VALUES (:username, :password)";
+            $stmtsignup = $pdo->prepare($querysignup);
+            $stmtsignup->execute([
+                'username' => $_POST['username'],
+                'password' => $hashedpassword
+            ]);
+            header('location: ../');
             exit();
         }
-        $password = trim($_POST['password']);
-        if (strlen($password) < 6) {
-            echo "<h1 class='title'>Your password must atleast be 6 characters long</h1>" . PHP_EOL;
-        }
-        $hashedpassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        $querysignup = "INSERT INTO users (username, password) VALUES (:username, :password)";
-        $stmtsignup = $pdo->prepare($querysignup);
-        $stmtsignup->execute([
-            'username' => $_POST['username'],
-            'password' => $hashedpassword
-        ]);
-        header('location: ../');
-        exit();
-    }
 
-    ?>
+        ?>
     </form>
     <p></p>
     <h1 class="title">Highscores</h1>
@@ -81,7 +82,7 @@ if (isset($_SESSION['username'])) {
         }
         ?>
     </table>
-    
+
 </body>
 
 </html>

@@ -13,6 +13,7 @@ if (!isset($_SESSION['username'])) {
 <html lang="en">
 
 <head>
+    <link rel="icon" href="images/cookie.png">
     <link rel="stylesheet" href="style/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
