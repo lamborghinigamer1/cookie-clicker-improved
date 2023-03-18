@@ -1,6 +1,6 @@
 <?php
 
-require('connect.php');
+require('database/connect.php');
 
 if (isset($_SESSION['username'])) {
     header('location: ./');
@@ -24,7 +24,7 @@ if (isset($_SESSION['username'])) {
     <h1 class="title">Cookie clicker login</h1>
     <form class="inputlayout" method="post">
         <img class="cookie" src="images/cookie.png" alt="cookie">
-        <a class="inputboxes" href="register.php">No account?</a>
+        <a class="inputboxes" href="pages/register.php">No account?</a>
         <!-- <label class="labelboxes" for="username">Username</label> -->
         <input class="inputboxes" name="username" type="text" placeholder="Username">
         <!-- <label class="labelboxes" for="password">Password</label> -->

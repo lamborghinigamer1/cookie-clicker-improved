@@ -1,6 +1,6 @@
 <?php
 
-require('connect.php');
+require('database/connect.php');
 
 if (!isset($_SESSION['username'])) {
     header('location: login.php');
@@ -22,7 +22,7 @@ if (!isset($_SESSION['username'])) {
 
 <body>
     <form class="inputlayout" method="post">
-        <a class="inputboxes" href="logout.php">Logout</a>
+        <a class="inputboxes" href="pages/logout.php">Logout</a>
         <button class="cookie cookiebutton" name="cookie" value="1">
             <img width="100%" src="images/cookie.png" alt="cookie">
         </button>

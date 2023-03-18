@@ -1,9 +1,9 @@
 <?php
 
-require('connect.php');
+require('../database/connect.php');
 
 if (isset($_SESSION['username'])) {
-    header('location: ./');
+    header('location: ../');
     exit();
 }
 
@@ -13,7 +13,7 @@ if (isset($_SESSION['username'])) {
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,8 +23,8 @@ if (isset($_SESSION['username'])) {
 <body>
     <h1 class="title">Cookie clicker register</h1>
     <form class="inputlayout" method="post">
-        <img class="cookie" src="images/cookie.png" alt="cookie">
-        <a class="inputboxes" href="login.php">Login instead</a>
+        <img class="cookie" src="../images/cookie.png" alt="cookie">
+        <a class="inputboxes" href="../login.php">Login instead</a>
         <input class="inputboxes" name="username" type="text" placeholder="Username">
         <input class="inputboxes" name="password" type="password" placeholder="Password">
         <button class="inputboxes" type="submit">Sign up</button>
@@ -52,7 +52,7 @@ if (isset($_SESSION['username'])) {
             'username' => $_POST['username'],
             'password' => $hashedpassword
         ]);
-        header('location: ./');
+        header('location: ../');
         exit();
     }
 
