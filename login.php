@@ -24,7 +24,7 @@ if (isset($_SESSION['username'])) {
 <body>
     <h1 class="title">Cookie clicker login</h1>
     <form class="inputlayout" method="post">
-        <img class="cookie" src="images/cookie.png" alt="cookie">
+        <img onclick="loggedInCheck()" class="cookie" src="images/cookie.png" alt="cookie">
         <a class="inputboxes" href="pages/register.php">No account?</a>
         <!-- <label class="labelboxes" for="username">Username</label> -->
         <input class="inputboxes" name="username" type="text" placeholder="Username">
@@ -73,7 +73,7 @@ if (isset($_SESSION['username'])) {
         }
         ?>
     </table>
-
+        <script src="script/script.js"></script>
 </body>
 
 </html>

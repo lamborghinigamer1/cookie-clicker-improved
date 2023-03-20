@@ -82,7 +82,7 @@ if (isset($_SESSION['username'])) {
         }
         ?>
     </table>
-
+        <script src="../script/script.js"></script>
 </body>
 
 </html>
