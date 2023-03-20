@@ -25,7 +25,7 @@ if (!isset($_SESSION['username'])) {
     <form class="inputlayout" method="post">
         <a class="inputboxes" href="pages/logout.php">Logout</a>
         <button class="cookie cookiebutton" name="cookie" value="1">
-            <img width="100%" src="images/cookie.png" alt="cookie">
+            <img id="clickCookie" src="images/cookie.png" alt="cookie">
         </button>
         <?php
 

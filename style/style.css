@@ -65,3 +65,8 @@ body {
 .tableh {
     font-size: 1.4em;
 }
+
+#clickCookie {
+    width: 100%;
+    cursor: pointer;
+}
