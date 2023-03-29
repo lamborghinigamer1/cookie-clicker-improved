@@ -12,6 +12,6 @@ Then you import from the folder ```database/import.sql``` inside of MariaDB.
 
 Next you make an account in Mariadb and an password and edit the file connect.php to match your credentials.
 
-Make sure to edit your host like this: ```mysql:host=yourURL'```.
+Make sure to edit your host like this: ```mysql:host=yourURL;```.
 
 And then you should be able to make an account and host cookie clicker improved!
